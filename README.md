@@ -11,7 +11,7 @@ The MOE report used aggregated data, since hourly correlation between the two in
 Introduction
 ============
 
-The Ministry of Environment (MOE) has been monitoring the impact of a new wood pellet manufacturing plant, situated in Lavington BC since November 2015. The MOE is primarily looking at the impact of the plant on the levels of particulate matter of less than 2.5 microns in diameter (PM2.5), since high levels of PM2.5 have been linked to adverse health outcomes^1. A beta-attenuation monitor (BAM) was set up in Lavington Baptist Church, downwind of the plant, to monitor PM2.5 concentrations, with an additional smaller monitor (EBAM) being temporarily installed upwind of the factory between 2017-2018. The MOE's analysis conclude that the pellet factory had no significant impact on the Lavington community. The goal of this project is to independently review the MOE report and conduct our own investigation.
+The Ministry of Environment (MOE) has been monitoring the impact of a new wood pellet manufacturing plant, situated in Lavington BC since November 2015. The MOE is primarily looking at the impact of the plant on the levels of particulate matter of less than 2.5 microns in diameter (PM2.5), since high levels of PM2.5 have been linked to adverse health outcomes <sup>1</sup>. A beta-attenuation monitor (BAM) was set up in Lavington Baptist Church, downwind of the plant, to monitor PM2.5 concentrations, with an additional smaller monitor (EBAM) being temporarily installed upwind of the factory between 2017-2018. The MOE's analysis conclude that the pellet factory had no significant impact on the Lavington community. The goal of this project is to independently review the MOE report and conduct our own investigation.
 
 The structure of our analysis essentially followed our clients direction. We first looked at the correlation between the two monitors, comparing the hourly and averaged daily readings. Following this we came across research that suggests that humidity greatly effects the monitoring systems and investigated the impact of this further.The analysis of inversion conditions looked at how the level of PM2.5 changed over time during these inversion days and if there has been a systematic increase in PM2.5 concentrations when these inversion events occured. We finally looked at the upwind and downwind effects of the plant.
 
@@ -111,7 +111,7 @@ After creating a subset of the data that only looks at the window when both inst
 
 ![Scatter plots of BAM vs EBAM readings](StatisticalConsultingProject_files/figure-markdown_github/scatterCor-1.png)
 
-After some research we came across an article <sup>2<sup> that suggested the low correlation in the readings may be due to humidity, which which increases the noise in measuring the PM2.5 concentrations. To look at the impact of humidty on the correlation of the two instruments we only looked at days when the instruments were located next to each other or the 'colocation period'.(Figure 6).
+After some research we came across an article <sup>2</sup> that suggested the low correlation in the readings may be due to humidity, which which increases the noise in measuring the PM2.5 concentrations. To look at the impact of humidty on the correlation of the two instruments we only looked at days when the instruments were located next to each other or the 'colocation period'.(Figure 6).
 
 ![How humidty effects correlation](StatisticalConsultingProject_files/figure-markdown_github/unnamed-chunk-3-1.png)
 
