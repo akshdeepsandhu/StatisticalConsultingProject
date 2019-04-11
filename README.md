@@ -45,13 +45,13 @@ The columns of the above table are respectively:
 
 After cleaning, reformatting and merging the data we found that there were large chunks of data still missing. This was either due to the BAM/EBAM having to be temporarily shut down for maintenance or the Vernon weather station having technical issues and failing to record any humidity measurements. To see if the missing data would be problematic a “missingness map” was created (Figure 1). From the visualization it is clear that the EBAM has quite a lot of missing data (as expected), since it was only functional for a short period of time. There are also large chunks of humidity data missing, but this should not be a problem, since we are only looking at days when the EBAM and BAM are both functional and the humidity data is present for those given days.
 
-![Missingness map](StatisticalConsultingProject_files/figure-markdown_github/mismap-1.png)
+![Missingness map](figure-markdown_github/mismap-1.png)
 
 Visualising the data
 --------------------
 
 Having determined that our analysis was feasible we produced some plots to visualize the data. The first plots that we created were histograms to look at the distribution of each column, shown below (Figure 2). Data on inversion days was obtained separately and is also shown included.
-<img src="StatisticalConsultingProject_files/figure-markdown_github/distplot-1.png" alt="Distribution of data" height="50%" />
+<img src="/figure-markdown_github/distplot-1.png" alt="Distribution of data" height="50%" />
 <p class="caption">
 Distribution of data
 </p>
@@ -60,7 +60,7 @@ The histograms of the EBAM and BAM both have a strong right skew (i.e. the readi
 
 After looking at the distribution of the columns, we created a scatter plot array (Figure 3), to look at any relationships between the variables.
 
-<img src="StatisticalConsultingProject_files/figure-markdown_github/scatterarray-1.png" alt="Scatter plot array" height="50%" />
+<img src="/figure-markdown_github/scatterarray-1.png" alt="Scatter plot array" height="50%" />
 <p class="caption">
 Scatter plot array
 </p>
