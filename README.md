@@ -45,7 +45,7 @@ The columns of the above table are respectively:
 
 After cleaning, reformatting and merging the data we found that there were large chunks of data still missing. This was either due to the BAM/EBAM having to be temporarily shut down for maintenance or the Vernon weather station having technical issues and failing to record any humidity measurements. To see if the missing data would be problematic a “missingness map” was created (Figure 1). From the visualization it is clear that the EBAM has quite a lot of missing data (as expected), since it was only functional for a short period of time. There are also large chunks of humidity data missing, but this should not be a problem, since we are only looking at days when the EBAM and BAM are both functional and the humidity data is present for those given days.
 
-![Missingness map](figure-markdown_github/mismap-1.png)
+![Missingness map](/figure-markdown_github/mismap-1.png)
 
 Visualising the data
 --------------------
@@ -69,7 +69,7 @@ There is a lot that can be inferred from the scatter plot array, which can then 
 
 A time series plot of the PM2.5 data was created for both the BAM and EBAM.The below figure shows that there is quite a lot of noise in the PM2.5 recordings from both the machines. The large spikes near the end of 2017 and also 2018 correspond to the forest fires that occurred in BC. Its also clear that the EBAM was only running for a short period of time. The majority of this project will focus on that time window when both machines were functional.
 
-![Time Series plot for BAM and EBAM](StatisticalConsultingProject_files/figure-markdown_github/tsPlot-1.png)
+![Time Series plot for BAM and EBAM](/figure-markdown_github/tsPlot-1.png)
 
 Methods and Results
 ===================
@@ -109,11 +109,11 @@ cor(ag1$x,ag2$x,use="complete.obs"))
 
 After creating a subset of the data that only looks at the window when both instruments were running we computed the raw correlation between the two sets. The correlation was approximately 0.513 compared the to averaged daily correlation, which was far higher at 0.921 confirming the MOE’s findings that the daily averages have far higher correaltion between the BAM and EBAM. A scatter plot (Figure 5), was created to visually display these findings.
 
-![Scatter plots of BAM vs EBAM readings](StatisticalConsultingProject_files/figure-markdown_github/scatterCor-1.png)
+![Scatter plots of BAM vs EBAM readings](/figure-markdown_github/scatterCor-1.png)
 
 After some research we came across an article <sup>2</sup> that suggested the low correlation in the readings may be due to humidity, which which increases the noise in measuring the PM2.5 concentrations. To look at the impact of humidty on the correlation of the two instruments we only looked at days when the instruments were located next to each other or the 'colocation period'.(Figure 6).
 
-![How humidty effects correlation](StatisticalConsultingProject_files/figure-markdown_github/unnamed-chunk-3-1.png)
+![How humidty effects correlation](/figure-markdown_github/unnamed-chunk-3-1.png)
 
 The figure produced showed an interesting pattern. The hourly correlation between the two instruments is fairly high when the humidity level is around 20%, after which it drops steadily, with the lowest correlation seen at around 40% humidity. Following this the hourly correlation increases with humidity, levelling out at around 0.6. The daily correlation at different levels of humidity also shows a similar pattern, however as the humidity increased so did the correlation without tapering off. These plots suggest that humidity has a clear impact on the instruments and although averaging the daily readings appears to somewhat mitigate this effect it may not necessarily be the appropriate way to analyze the data. Thus, the effect of humidity on the BAM and EBAM is a topic that should be explored further and a naive averaging of the data may not be the statistically appropriate way to conduct the analysis.
 
@@ -129,7 +129,7 @@ An inversion day is an atmospheric phenomena that predominantly occurs during wi
 
 The distribution of the inversion data is shown in the previous section (Figure 2). Due to the strong skew, the data was log-transformed before any further analysis was conducted. Following this box-plots were made to see if there is any visual difference in the inversion days for different years (Figure 7).
 
-![Box-plot of inversion days](StatisticalConsultingProject_files/figure-markdown_github/inversionBox-1.png)
+![Box-plot of inversion days](/figure-markdown_github/inversionBox-1.png)
 
 The resulting box plots show that there may be a difference in the PM2.5 concentrations over time during inversion days. To test this we conducted an ANOVA and a post hoc Tukey HSD. The aim of this was to determine if the differences in PM2.5 that are seen in the box-plots are statistically significant or due to natural variation in the data.
 
@@ -144,7 +144,7 @@ summary(anova.treatment)
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-![QQ and residual plots from ANOVA](StatisticalConsultingProject_files/figure-markdown_github/QQandResid-1.png)
+![QQ and residual plots from ANOVA](/figure-markdown_github/QQandResid-1.png)
 
 The results of the ANOVA indicate that there is a significant difference in the PM2.5 levels during the different winter seasons. This is clear from the p-value for lowVIdays$Group, which is 3.76e-0.9, implying that at least one of the seasons is different from the others. This confirms what the box-plots show, where seasons B and D appear to be different from seasons A and C. The validity of the ANOVA was confirmed via residual and QQ plots (Figure 8). These show that the ANOVA is a fairly good fit to the data.
 
@@ -206,7 +206,7 @@ plot(diff.df ~ ss$Rel.Humidity,ylab="(EBAM - BAM) Difference in PM25 concentrati
 abline(fit.dif$coefficients[1],fit.dif$coefficients[2],col="red")
 ```
 
-![Difference plot Hourly](StatisticalConsultingProject_files/figure-markdown_github/difFig-1.png)
+![Difference plot Hourly](/figure-markdown_github/difFig-1.png)
 
 The above plot shows the difference in readings between the BAM and EBAM and how this change with humidity. A robust linear regression was fit and the red line shows this fit. Clearly from the above plot, when the humidity is low the difference is fairly well centred around 0, however with increasing humidity there is greater variance in the difference. Nonetheless, the differenced data appears to be centred around zero. Therefore, we can naively assume that neither the BAM or EBAM are getting systematically higher readings as humidity changes.
 
@@ -220,7 +220,7 @@ plot(aggregate.df$x ~ humidty.agg$x,ylab="(EBAM - BAM) Daily difference in
 abline(fit.agg$coefficients[1],fit.agg$coefficients[2],col="red")
 ```
 
-![Difference plot Daily](StatisticalConsultingProject_files/figure-markdown_github/diffFigDaily-1.png)
+![Difference plot Daily](/figure-markdown_github/diffFigDaily-1.png)
 
 The same was done for averaged daily data. This plot is not noticibly different from the hourly values.
 
@@ -240,7 +240,7 @@ maxplot <- ggplot(max.df,aes(x=Date, y=dailyMax))+ geom_line(color = "black", si
 print(maxplot)
 ```
 
-![Time Series of Daily Maximum PM2.5 Concentration (BAM)](StatisticalConsultingProject_files/figure-markdown_github/maxtime-1.png)
+![Time Series of Daily Maximum PM2.5 Concentration (BAM)](/figure-markdown_github/maxtime-1.png)
 
 Appendix
 ========
@@ -371,7 +371,7 @@ ebamPlot <- ggplot(ss,aes(x=Date.Time, y=EBAM.PM25))+ geom_line(color = "blue", 
 plot_grid(bamPlot, ebamPlot, labels = "AUTO")
 ```
 
-![](StatisticalConsultingProject_files/figure-markdown_github/unnamed-chunk-9-1.png)
+![](/figure-markdown_github/unnamed-chunk-9-1.png)
 
 Plotting averaged time series data from BAM and EBAM
 
@@ -382,7 +382,7 @@ ggplot()+
      xlab("Time") + ylab("PM25 concentration") + labs()
 ```
 
-![](StatisticalConsultingProject_files/figure-markdown_github/unnamed-chunk-10-1.png)
+![](/figure-markdown_github/unnamed-chunk-10-1.png)
 
 Even after averaging still quite erratic
 
@@ -394,7 +394,7 @@ ggplot()+
      xlab("Time") + ylab("PM25 concentration") + ggtitle('Plot of differenced time series') +labs()
 ```
 
-![](StatisticalConsultingProject_files/figure-markdown_github/unnamed-chunk-11-1.png)
+![](/figure-markdown_github/unnamed-chunk-11-1.png)
 
 ``` r
 dat <- df.merged
