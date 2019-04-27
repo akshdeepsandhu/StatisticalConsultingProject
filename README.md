@@ -242,6 +242,7 @@ print(maxplot)
 
 ![Time Series of Daily Maximum PM2.5 Concentration (BAM)](/figure-markdown_github/maxtime-1.png)
 
+
 Appendix
 ========
 
@@ -459,5 +460,7 @@ kable(regtable, digits = 3, align = "c", caption = "\\label{tab:regress}Multilin
 | Wind Direction \* Wind Speed |         1.464         |  0.001  |        0.001       |
 
 
-
+Contributors
+============
+Ash Sandhu / Akbar Ali Qazi / Shirley Xie / Jessie Li
 
